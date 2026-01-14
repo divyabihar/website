@@ -1,20 +1,43 @@
-import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 
+const HERO_IMAGES = [
+    "https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069&auto=format&fit=crop", // Bodh Gaya
+    "https://images.unsplash.com/photo-1600609842388-295989104764?q=80&w=2070&auto=format&fit=crop", // Nalanda/Ruins
+    "https://images.unsplash.com/photo-1518171630138-0245a1c3639e?q=80&w=2069&auto=format&fit=crop", // Spiritual Lamps
+    "https://images.unsplash.com/photo-1622699895697-39cb3232860a?q=80&w=1964&auto=format&fit=crop"  // Rajgir/Nature
+];
+
 const HeroSection = () => {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+        }, 5000); // Change image every 5 seconds
+        return () => clearInterval(timer);
+    }, []);
+
     return (
-        <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
-            {/* Background Image/Video */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-                style={{
-                    // Mahabodhi Temple or Spiritual India Vibe - Optimized
-                    backgroundImage: "url('https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069&auto=format&fit=crop')"
-                }}
-            >
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-background" />
-            </div>
+        <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-black">
+            {/* Animated Background Slideshow */}
+            <AnimatePresence mode="popLayout">
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: `url('${HERO_IMAGES[index]}')`
+                    }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/90" />
+                </motion.div>
+            </AnimatePresence>
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 text-center">
