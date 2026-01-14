@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Typewriter from 'typewriter-effect';
 
 const HeroSection = () => {
     return (
@@ -27,15 +28,24 @@ const HeroSection = () => {
                     || Atma Deepo Bhava ||
                 </motion.p>
 
-                {/* Main Headline */}
-                <motion.h1
+                {/* Main Headline - Hindi Typing Effect */}
+                <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-amber-100 to-white mb-6 drop-shadow-2xl leading-tight font-serif"
+                    className="text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-amber-100 to-white mb-6 drop-shadow-2xl leading-tight font-serif min-h-[1.2em]"
                 >
-                    Divya Bihar
-                </motion.h1>
+                    <Typewriter
+                        options={{
+                            strings: ['दिव्य बिहार'],
+                            autoStart: true,
+                            loop: true,
+                            delay: 150,
+                            deleteSpeed: 100,
+                            cursor: '|'
+                        }}
+                    />
+                </motion.div>
 
                 {/* Subheadline - Clean & Precise */}
                 <motion.p
