@@ -10,6 +10,7 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
+const cache_manager_1 = require("@nestjs/cache-manager");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const destinations_module_1 = require("./modules/destinations/destinations.module");
@@ -25,6 +26,10 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
                 envFilePath: '.env',
+            }),
+            cache_manager_1.CacheModule.register({
+                isGlobal: true,
+                ttl: 60000,
             }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',

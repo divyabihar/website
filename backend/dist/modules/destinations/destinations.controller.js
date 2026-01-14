@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DestinationsController = void 0;
 const common_1 = require("@nestjs/common");
 const destinations_service_1 = require("./destinations.service");
+const cache_manager_1 = require("@nestjs/cache-manager");
 let DestinationsController = class DestinationsController {
     destinationsService;
     constructor(destinationsService) {
@@ -43,6 +44,7 @@ __decorate([
 ], DestinationsController.prototype, "findOne", null);
 exports.DestinationsController = DestinationsController = __decorate([
     (0, common_1.Controller)('destinations'),
+    (0, common_1.UseInterceptors)(cache_manager_1.CacheInterceptor),
     __metadata("design:paramtypes", [destinations_service_1.DestinationsService])
 ], DestinationsController);
 //# sourceMappingURL=destinations.controller.js.map

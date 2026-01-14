@@ -1,8 +1,10 @@
-import { Controller, Get, Post, Body, Param, Query, Put, Delete, NotFoundException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Query, Put, Delete, NotFoundException, UseInterceptors } from '@nestjs/common';
 import { BlogService } from './blog.service';
 import { BlogPost, BlogLanguage } from './entities/blog-post.entity';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @Controller('blog')
+@UseInterceptors(CacheInterceptor)
 export class BlogController {
     constructor(private readonly blogService: BlogService) { }
 

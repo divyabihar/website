@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getDestinations } from "@/services/api";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Image from "next/image";
 
 export const metadata = {
     title: "Destinations in Bihar | Bodh Gaya, Rajgir, Nalanda",
@@ -32,10 +33,12 @@ export default async function DestinationsIndex() {
                             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 h-full flex flex-col">
                                 <div className="h-64 overflow-hidden bg-gray-200 relative">
                                     {dest.images && dest.images.length > 0 ? (
-                                        <img
+                                        <Image
                                             src={dest.images[0]}
                                             alt={dest.name}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                     ) : (
                                         <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-100">

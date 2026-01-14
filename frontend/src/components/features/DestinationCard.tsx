@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Calendar, MapPin } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -24,10 +25,12 @@ const DestinationCard = ({
         <div className={cn("group relative overflow-hidden rounded-xl bg-white shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300", className)}>
             {/* Image Container */}
             <div className="relative h-64 w-full overflow-hidden">
-                {/* Placeholder Gradient if image fails, or use standard image tag */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                    style={{ backgroundImage: `url(${image})` }}
+                <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
 

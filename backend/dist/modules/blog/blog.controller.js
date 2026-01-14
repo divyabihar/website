@@ -16,6 +16,7 @@ exports.BlogController = void 0;
 const common_1 = require("@nestjs/common");
 const blog_service_1 = require("./blog.service");
 const blog_post_entity_1 = require("./entities/blog-post.entity");
+const cache_manager_1 = require("@nestjs/cache-manager");
 let BlogController = class BlogController {
     blogService;
     constructor(blogService) {
@@ -81,6 +82,7 @@ __decorate([
 ], BlogController.prototype, "remove", null);
 exports.BlogController = BlogController = __decorate([
     (0, common_1.Controller)('blog'),
+    (0, common_1.UseInterceptors)(cache_manager_1.CacheInterceptor),
     __metadata("design:paramtypes", [blog_service_1.BlogService])
 ], BlogController);
 //# sourceMappingURL=blog.controller.js.map

@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CacheModule } from '@nestjs/cache-manager';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DestinationsModule } from './modules/destinations/destinations.module';
@@ -13,6 +14,10 @@ import { BlogModule } from './modules/blog/blog.module';
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
+    }),
+    CacheModule.register({
+      isGlobal: true,
+      ttl: 60000, // 60 seconds default cache
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',

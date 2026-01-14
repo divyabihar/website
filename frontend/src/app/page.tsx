@@ -112,9 +112,19 @@ export default async function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Static Preview of Hotels (Dynamic in real app) */}
+              import Image from "next/image";
+
+              // ... inside the component ...
+
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
-                  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070" className="w-full h-full object-cover" alt="Hotel 1" />
+                  <Image
+                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070"
+                    alt="Hotel 1"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-lg mb-1">Hotel Bodh Gaya Regency</h3>
@@ -124,7 +134,13 @@ export default async function Home() {
               </div>
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
-                  <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025" className="w-full h-full object-cover" alt="Hotel 2" />
+                  <Image
+                    src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025"
+                    alt="Hotel 2"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-lg mb-1">Marasa Sarovar Premiere</h3>
@@ -134,7 +150,13 @@ export default async function Home() {
               </div>
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
-                  <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2049" className="w-full h-full object-cover" alt="Hotel 3" />
+                  <Image
+                    src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2049"
+                    alt="Hotel 3"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-lg mb-1">Indo Hokke Hotel</h3>
