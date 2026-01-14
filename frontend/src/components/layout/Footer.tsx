@@ -70,6 +70,7 @@ const Footer = () => {
                     <div className="flex gap-4 mt-4 md:mt-0">
                         <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-white">Terms of Service</Link>
+                        <Link href="/disclaimer" className="hover:text-white">Disclaimer</Link>
                     </div>
                 </div>
             </div>
