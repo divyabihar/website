@@ -68,6 +68,8 @@ const Navbar = () => {
                 {/* Mobile Menu Toggle */}
                 <button
                     className="md:hidden text-foreground p-2"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle menu"
                 >
                     {isOpen ? <X className="text-gray-900" /> : <Menu className="text-gray-900" />}
                 </button>
@@ -75,19 +77,19 @@ const Navbar = () => {
 
             {/* Mobile Menu Dropdown */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border shadow-lg animate-in slide-in-from-top-5">
+                <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-lg animate-in slide-in-from-top-5 z-40">
                     <div className="flex flex-col p-4 gap-4">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-foreground font-medium hover:text-saffron transition-colors p-2"
+                                className="text-gray-900 font-medium hover:text-saffron transition-colors p-2 text-lg"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
                             </Link>
                         ))}
-                        <Button className="w-full bg-saffron text-white">Book a Tour</Button>
+                        <Button className="w-full bg-saffron text-white" onClick={() => setIsOpen(false)}>Book a Tour</Button>
                     </div>
                 </div>
             )}

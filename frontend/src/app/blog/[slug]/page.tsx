@@ -6,6 +6,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Metadata } from 'next';
 import AdSlot from "@/components/ads/AdSlot";
+import { notFound } from "next/navigation";
+import Image from "next/image";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -52,7 +54,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
     const { slug } = await params;
-    const post = await getBlogPost(slug, 'en');
+    let post;
+
+    try {
+        post = await getBlogPost(slug, 'en');
+    } catch (error) {
+        notFound();
+    }
 
     // Find Hindi Link
     const hiLink = post.translations?.find(t => t.language === 'hi');
@@ -129,8 +137,15 @@ export default async function BlogPostPage({ params }: Props) {
                     {/* Main Content */}
                     <article className="lg:col-span-8">
                         {post.image_url && (
-                            <div className="rounded-2xl overflow-hidden mb-10 shadow-lg">
-                                <img src={post.image_url} alt={post.title} className="w-full h-auto" />
+                            <div className="rounded-2xl overflow-hidden mb-10 shadow-lg relative h-[400px]">
+                                <Image
+                                    src={post.image_url}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1000px) 100vw, 800px"
+                                    priority
+                                />
                             </div>
                         )}
 
