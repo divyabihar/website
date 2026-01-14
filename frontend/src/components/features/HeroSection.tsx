@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Typewriter from 'typewriter-effect';
+import { toast } from "sonner";
 
 const HeroSection = () => {
     return (
@@ -67,6 +68,7 @@ const HeroSection = () => {
                     <Button
                         size="lg"
                         className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white border-0 text-lg px-10 py-6 rounded-full shadow-[0_0_30px_-5px_rgba(245,158,11,0.5)] transition-all hover:scale-105 hover:shadow-[0_0_50px_-5px_rgba(245,158,11,0.7)]"
+                        onClick={() => toast.success("Welcome! Our team will contact you soon.")}
                     >
                         Begin Your Pilgrimage
                     </Button>
