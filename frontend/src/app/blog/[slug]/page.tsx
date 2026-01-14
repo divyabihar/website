@@ -5,6 +5,7 @@ import BlogSidebar from "@/components/layout/BlogSidebar";
 import Link from "next/link";
 import Script from "next/script";
 import { Metadata } from 'next';
+import AdSlot from "@/components/ads/AdSlot";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -120,6 +121,10 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Content Area */}
             <div className="container mx-auto px-4 py-12">
+
+                {/* AD SLOT: Top of Page */}
+                <AdSlot slotId="TOP_BANNER_SLOT_ID" description="Article Top Banner" className="max-w-5xl mx-auto mb-12" />
+
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Main Content */}
                     <article className="lg:col-span-8">
@@ -129,10 +134,14 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
                         )}
 
+                        {/* Article Content */}
                         <div
                             className="prose prose-lg prose-headings:font-serif prose-headings:text-gray-900 prose-a:text-saffron prose-img:rounded-xl max-w-none text-gray-700"
                             dangerouslySetInnerHTML={{ __html: post.content }}
                         />
+
+                        {/* AD SLOT: Middle/End of Content */}
+                        <AdSlot slotId="CONTENT_BOTTOM_SLOT_ID" description="In-Article Bottom" format="auto" />
 
                         {/* FAQ Section */}
                         {post.faq_schema && (
@@ -153,7 +162,12 @@ export default async function BlogPostPage({ params }: Props) {
 
                     {/* Sidebar */}
                     <div className="lg:col-span-4">
-                        <BlogSidebar />
+                        {/* Sidebar content */}
+                        <div className="sticky top-24 space-y-8">
+                            <BlogSidebar />
+                            {/* AD SLOT: Sidebar Sticky */}
+                            <AdSlot slotId="SIDEBAR_STICKY_SLOT_ID" description="Sidebar Sticky Ad" format="rectangle" style={{ minHeight: '300px' }} />
+                        </div>
                     </div>
                 </div>
             </div>
