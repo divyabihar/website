@@ -17,7 +17,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const destination_entity_1 = require("./entities/destination.entity");
-const seedData = require('./destinations.seed');
+const destinations_seed_1 = require("./destinations.seed");
 let DestinationsService = class DestinationsService {
     destinationsRepository;
     constructor(destinationsRepository) {
@@ -27,26 +27,31 @@ let DestinationsService = class DestinationsService {
         await this.seed();
     }
     async seed() {
-        const count = await this.destinationsRepository.count();
-        if (count === 0) {
-            const data = Array.isArray(seedData) ? seedData : (seedData.default || []);
-            for (const item of data) {
-                const exists = await this.destinationsRepository.findOneBy({ slug: item.slug });
-                if (!exists) {
-                    await this.destinationsRepository.save(item);
-                }
+        const data = destinations_seed_1.destinationsSeedData;
+        for (const item of data) {
+            const exists = await this.destinationsRepository.findOneBy({
+                slug: item.slug,
+            });
+            if (!exists) {
+                await this.destinationsRepository.save(item);
+            }
+            else {
+                await this.destinationsRepository.update(exists.id, {
+                    images: item.images,
+                    overview: item.overview,
+                });
             }
         }
     }
     async findAll() {
         return this.destinationsRepository.find({
-            order: { name: 'ASC' }
+            order: { name: 'ASC' },
         });
     }
     async findOne(slug) {
         return this.destinationsRepository.findOne({
             where: { slug },
-            relations: ['places', 'hotels']
+            relations: ['places', 'hotels'],
         });
     }
 };

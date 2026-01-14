@@ -7,6 +7,6 @@ import { Hotel } from './entities/hotel.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Hotel])],
   controllers: [HotelsController],
-  providers: [HotelsService]
+  providers: [HotelsService],
 })
-export class HotelsModule { }
+export class HotelsModule {}

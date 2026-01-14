@@ -31,7 +31,7 @@ const MOCK_DESTINATIONS: Destination[] = [
         history: 'For Buddhists, Bodh Gaya is the most important of the main four pilgrimage sites related to the life of Gautama Buddha.',
         how_to_reach: 'Nearest airport is Gaya Airport (12km).',
         best_time_to_visit: 'October to March',
-        images: ['https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069'],
+        images: ['/images/destinations/bodh-gaya.jpg'],
         latitude: '24.6961',
         longitude: '84.9870'
     },
@@ -43,7 +43,7 @@ const MOCK_DESTINATIONS: Destination[] = [
         history: 'It dates back to 1000 BC and is mentioned in ancient scriptures.',
         how_to_reach: 'Nearest airport is Patna (100km).',
         best_time_to_visit: 'October to March',
-        images: ['https://images.unsplash.com/photo-1622699895697-39cb3232860a?q=80&w=1964'],
+        images: ['/images/destinations/rajgir.jpg'],
         latitude: '25.0194',
         longitude: '85.4184'
     },
@@ -55,7 +55,7 @@ const MOCK_DESTINATIONS: Destination[] = [
         history: 'Founded in the 5th century CE, it was a center of learning.',
         how_to_reach: '90km from Patna.',
         best_time_to_visit: 'October to March',
-        images: ['https://images.unsplash.com/photo-1591528659550-6cb463c22421?q=80&w=2067'],
+        images: ['/images/destinations/nalanda.jpg'],
         latitude: '25.1288',
         longitude: '85.4475'
     }

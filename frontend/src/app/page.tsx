@@ -6,7 +6,35 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, ShieldCheck, HeartHandshake } from "lucide-react";
 import { getDestinations, Destination } from "@/services/api";
 import LeadForm from "@/components/features/LeadForm";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Divya Bihar | The Spiritual Heart of India | Bodh Gaya Tourism",
+  description: "Your ultimate guide to spiritual Bihar. Plan trips to Bodh Gaya, Rajgir, Nalanda, and Gaya Ji. Book hotels, verified guides, and authentic pilgrimages.",
+  alternates: {
+    canonical: "https://divyabihar.com",
+    languages: {
+      "en-US": "https://divyabihar.com",
+    },
+  },
+  openGraph: {
+    title: "Divya Bihar | Discover the Spiritual Heart of India",
+    description: "Plan your sacred journey to Bihar. Explore Bodh Gaya, Rajgir, and Nalanda with trusted local experts.",
+    url: "https://divyabihar.com",
+    siteName: "Divya Bihar",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mahabodhi Temple spiritual sunrise",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default async function Home() {
   let featuredDestinations: Destination[] = [];
@@ -59,7 +87,7 @@ export default async function Home() {
         </section>
 
         {/* Featured Destinations */}
-        <section className="py-24 bg-background relative">
+        <section id="destinations" className="py-24 bg-background relative">
           {/* Decorative Background Element */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-saffron/5 rounded-full blur-3xl -z-10"></div>
 
@@ -82,7 +110,7 @@ export default async function Home() {
                     key={dest.slug}
                     name={dest.name}
                     description={dest.overview}
-                    image={dest.images && dest.images.length > 0 ? dest.images[0] : 'https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069'}
+                    image={dest.images && dest.images.length > 0 ? dest.images[0] : '/images/destinations/bodh-gaya.jpg'}
                     location="Bihar, India"
                     slug={dest.slug}
                   />
@@ -117,7 +145,7 @@ export default async function Home() {
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070"
+                    src="/images/hotels/hotel-1.jpg"
                     alt="Hotel 1"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -133,7 +161,7 @@ export default async function Home() {
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025"
+                    src="/images/hotels/hotel-2.jpg"
                     alt="Hotel 2"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -149,7 +177,7 @@ export default async function Home() {
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2049"
+                    src="/images/hotels/hotel-3.jpg"
                     alt="Hotel 3"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -173,7 +201,7 @@ export default async function Home() {
         </section>
 
         {/* Plan My Trip Section */}
-        <section className="py-24 bg-foreground text-white relative overflow-hidden">
+        <section id="plan-trip" className="py-24 bg-foreground text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
           <div className="container mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

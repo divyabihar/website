@@ -5,22 +5,22 @@ import { Lead } from './entities/lead.entity';
 
 @Injectable()
 export class BookingsService {
-    constructor(
-        @InjectRepository(Lead)
-        private leadsRepository: Repository<Lead>,
-    ) { }
+  constructor(
+    @InjectRepository(Lead)
+    private leadsRepository: Repository<Lead>,
+  ) {}
 
-    async createLead(leadData: Partial<Lead>) {
-        const lead = this.leadsRepository.create(leadData);
-        return this.leadsRepository.save(lead);
-    }
+  async createLead(leadData: Partial<Lead>) {
+    const lead = this.leadsRepository.create(leadData);
+    return this.leadsRepository.save(lead);
+  }
 
-    async findAllLeads() {
-        return this.leadsRepository.find({ order: { created_at: 'DESC' } });
-    }
+  async findAllLeads() {
+    return this.leadsRepository.find({ order: { created_at: 'DESC' } });
+  }
 
-    async updateLeadStatus(id: number, status: string) {
-        await this.leadsRepository.update(id, { status });
-        return this.leadsRepository.findOneBy({ id });
-    }
+  async updateLeadStatus(id: number, status: string) {
+    await this.leadsRepository.update(id, { status });
+    return this.leadsRepository.findOneBy({ id });
+  }
 }

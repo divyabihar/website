@@ -132,8 +132,7 @@ export default async function BlogPostPageHindi({ params }: Props) {
             {/* Content Area */}
             <div className="container mx-auto px-4 py-12">
 
-                {/* AD SLOT: Top of Page */}
-                <AdSlot slotId="TOP_BANNER_SLOT_ID" description="Article Top Banner (HI)" className="max-w-5xl mx-auto mb-12" />
+
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Main Content */}
@@ -157,8 +156,7 @@ export default async function BlogPostPageHindi({ params }: Props) {
                             dangerouslySetInnerHTML={{ __html: post.content }}
                         />
 
-                        {/* AD SLOT: Middle/End of Content */}
-                        <AdSlot slotId="CONTENT_BOTTOM_SLOT_ID" description="In-Article Bottom (HI)" format="auto" />
+
 
                         {/* FAQ Section */}
                         {post.faq_schema && (
@@ -180,8 +178,7 @@ export default async function BlogPostPageHindi({ params }: Props) {
                     <div className="lg:col-span-4">
                         <div className="sticky top-24 space-y-8">
                             <BlogSidebarHindi />
-                            {/* AD SLOT: Sidebar Sticky */}
-                            <AdSlot slotId="SIDEBAR_STICKY_SLOT_ID" description="Sidebar Sticky Ad (HI)" format="rectangle" style={{ minHeight: '300px' }} />
+
                         </div>
                     </div>
                 </div>

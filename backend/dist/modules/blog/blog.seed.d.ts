@@ -13,13 +13,13 @@ export declare const blogSeedData: ({
     category: string;
     tags: string[];
     faq_schema: {
-        "@context": string;
-        "@type": string;
+        '@context': string;
+        '@type': string;
         mainEntity: {
-            "@type": string;
+            '@type': string;
             name: string;
             acceptedAnswer: {
-                "@type": string;
+                '@type': string;
                 text: string;
             };
         }[];

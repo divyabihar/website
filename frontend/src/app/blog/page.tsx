@@ -8,6 +8,12 @@ import Image from "next/image";
 export const metadata = {
     title: "Spiritual Travel Blog | Divya Bihar",
     description: "Explore guides, tips, and stories about Bihar's spiritual destinations like Bodh Gaya, Rajgir, and Nalanda.",
+    alternates: {
+        canonical: "https://divyabihar.com/blog",
+        languages: {
+            "hi": "https://divyabihar.com/hi/blog",
+        },
+    },
 };
 
 export default async function BlogIndex() {

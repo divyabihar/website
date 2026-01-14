@@ -9,7 +9,12 @@ const compression_1 = __importDefault(require("compression"));
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.use((0, compression_1.default)());
-    app.enableCors();
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    app.enableCors({
+        origin: [frontendUrl, 'https://divyabihar.com'],
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+        credentials: true,
+    });
     await app.listen(process.env.PORT ?? 3001);
 }
 bootstrap();

@@ -10,4 +10,4 @@ import { SpiritualPlace } from './entities/spiritual-place.entity';
   controllers: [DestinationsController],
   providers: [DestinationsService],
 })
-export class DestinationsModule { }
+export class DestinationsModule {}

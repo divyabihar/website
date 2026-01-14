@@ -8,7 +8,7 @@ exports.blogSeedData = [
         group_id: 'group-1',
         title: 'Complete Travel Guide to Bodh Gaya: History & Timings',
         slug: 'bodh-gaya-travel-guide',
-        image_url: 'https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069',
+        image_url: '/images/blog/bodh-gaya.jpg',
         content: `
             <h2>Introduction</h2>
             <p>Bodh Gaya is the spiritual heart of Buddhism, where Prince Siddhartha attained enlightenment and became the Buddha. Located in Bihar, it invites millions of pilgrims annually.</p>
@@ -25,40 +25,45 @@ exports.blogSeedData = [
         author: 'Rahul Verma',
         meta_title: 'Bodh Gaya Travel Guide 2026: History, Temple Timings & Tips',
         meta_description: 'Plan your trip to Bodh Gaya with our complete guide. Learn about Mahabodhi Temple timings, history, the Bodhi Tree, and how to reach.',
-        keywords: ['Bodh Gaya Travel Guide', 'Mahabodhi Temple', 'Bodhi Tree', 'Bihar Tourism'],
+        keywords: [
+            'Bodh Gaya Travel Guide',
+            'Mahabodhi Temple',
+            'Bodhi Tree',
+            'Bihar Tourism',
+        ],
         category: 'Guide',
         tags: ['Bodh Gaya', 'Buddhism', 'Pilgrimage'],
         faq_schema: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
                 {
-                    "@type": "Question",
-                    "name": "What are the timings for Mahabodhi Temple?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "The temple is open daily from 5:00 AM to 9:00 PM."
-                    }
+                    '@type': 'Question',
+                    name: 'What are the timings for Mahabodhi Temple?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'The temple is open daily from 5:00 AM to 9:00 PM.',
+                    },
                 },
                 {
-                    "@type": "Question",
-                    "name": "Is mobile allowed inside the temple?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Mobile phones are generally not allowed inside the inner sanctum. Lockers are available at the entrance."
-                    }
-                }
-            ]
+                    '@type': 'Question',
+                    name: 'Is mobile allowed inside the temple?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Mobile phones are generally not allowed inside the inner sanctum. Lockers are available at the entrance.',
+                    },
+                },
+            ],
         },
         published_at: new Date('2026-01-01T10:00:00Z'),
-        is_published: true
+        is_published: true,
     },
     {
         language: blog_post_entity_1.BlogLanguage.HI,
         group_id: 'group-1',
         title: 'बोधगया यात्रा की पूरी जानकारी: इतिहास और दर्शन का समय',
         slug: 'bodh-gaya-travel-guide-hindi',
-        image_url: 'https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069',
+        image_url: '/images/blog/bodh-gaya.jpg',
         content: `
             <h2>परिचय</h2>
             <p>बोधगया बौद्ध धर्म का आध्यात्मिक हृदय है, जहाँ राजकुमार सिद्धार्थ को ज्ञान प्राप्त हुआ और वे बुद्ध बने। बिहार में स्थित यह स्थल प्रतिवर्ष लाखों तीर्थयात्रियों को आमंत्रित करता है।</p>
@@ -79,28 +84,28 @@ exports.blogSeedData = [
         category: 'गाइड',
         tags: ['बोधगया', 'बौद्ध धर्म', 'तीर्थ यात्रा'],
         faq_schema: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
                 {
-                    "@type": "Question",
-                    "name": "महाबोधि मंदिर खुलने का समय क्या है?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "मंदिर प्रतिदिन सुबह 5:00 बजे से रात 9:00 बजे तक खुला रहता है।"
-                    }
-                }
-            ]
+                    '@type': 'Question',
+                    name: 'महाबोधि मंदिर खुलने का समय क्या है?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'मंदिर प्रतिदिन सुबह 5:00 बजे से रात 9:00 बजे तक खुला रहता है।',
+                    },
+                },
+            ],
         },
         published_at: new Date('2026-01-01T10:00:00Z'),
-        is_published: true
+        is_published: true,
     },
     {
         language: blog_post_entity_1.BlogLanguage.EN,
         group_id: 'group-2',
         title: 'How to Perform Pind Daan in Gaya: Step-by-Step Guide',
         slug: 'pind-daan-gaya-guide',
-        image_url: 'https://images.unsplash.com/photo-1600609842388-295989104764?q=80&w=2070',
+        image_url: '/images/blog/pind-daan.jpg',
         content: `
             <h2>The Significance of Pind Daan</h2>
             <p>Performing **Pind Daan** in Gaya is believed to bring salvation (Moksha) to one's ancestors. It is a mandatory rite for Hindus to ensure the peace of departed souls.</p>
@@ -118,28 +123,28 @@ exports.blogSeedData = [
         category: 'Rituals',
         tags: ['Gaya', 'Hinduism', 'Rituals'],
         faq_schema: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
                 {
-                    "@type": "Question",
-                    "name": "Why is Pind Daan performed in Gaya?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Gaya is considered the most sacred place for Pind Daan due to a boon given by Lord Vishnu."
-                    }
-                }
-            ]
+                    '@type': 'Question',
+                    name: 'Why is Pind Daan performed in Gaya?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Gaya is considered the most sacred place for Pind Daan due to a boon given by Lord Vishnu.',
+                    },
+                },
+            ],
         },
         published_at: new Date('2026-01-05T10:00:00Z'),
-        is_published: true
+        is_published: true,
     },
     {
         language: blog_post_entity_1.BlogLanguage.HI,
         group_id: 'group-2',
         title: 'गया जी में पिंड दान कैसे करें: संपूर्ण विधि और महत्व',
         slug: 'pind-daan-gaya-guide-hindi',
-        image_url: 'https://images.unsplash.com/photo-1600609842388-295989104764?q=80&w=2070',
+        image_url: '/images/blog/pind-daan.jpg',
         content: `
             <h2>पिंड दान का महत्व</h2>
             <p>गया में **पिंड दान** करने से पूर्वजों को मोक्ष की प्राप्ति होती है। दिवंगत आत्माओं की शांति के लिए हिंदुओं के लिए यह एक आवश्यक संस्कार है।</p>
@@ -157,28 +162,28 @@ exports.blogSeedData = [
         category: 'अनुष्ठान',
         tags: ['गया', 'हिंदू धर्म', 'अनुष्ठान'],
         faq_schema: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
                 {
-                    "@type": "Question",
-                    "name": "गया में पिंड दान क्यों किया जाता है?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "भगवान विष्णु द्वारा दिए गए वरदान के कारण गया को पिंड दान के लिए सबसे पवित्र स्थान माना जाता है।"
-                    }
-                }
-            ]
+                    '@type': 'Question',
+                    name: 'गया में पिंड दान क्यों किया जाता है?',
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'भगवान विष्णु द्वारा दिए गए वरदान के कारण गया को पिंड दान के लिए सबसे पवित्र स्थान माना जाता है।',
+                    },
+                },
+            ],
         },
         published_at: new Date('2026-01-05T10:00:00Z'),
-        is_published: true
+        is_published: true,
     },
     {
         language: blog_post_entity_1.BlogLanguage.EN,
         group_id: 'group-3',
         title: 'Exploring the Ruins of Nalanda University',
         slug: 'nalanda-university-ruins',
-        image_url: 'https://images.unsplash.com/photo-1591528659550-6cb463c22421?q=80&w=2067',
+        image_url: '/images/blog/nalanda.jpg',
         content: `
             <h2>A Center of Ancient Learning</h2>
             <p>Nalanda was a renowned mahavihara (Buddhist monastic university) in ancient Magadha. It operated from 427 to 1197 CE.</p>
@@ -193,14 +198,14 @@ exports.blogSeedData = [
         category: 'History',
         tags: ['Nalanda', 'History', 'Education'],
         published_at: new Date('2026-01-10T10:00:00Z'),
-        is_published: true
+        is_published: true,
     },
     {
         language: blog_post_entity_1.BlogLanguage.HI,
         group_id: 'group-3',
         title: 'नालंदा विश्वविद्यालय के खंडहर: इतिहास के पन्नों से',
         slug: 'nalanda-university-ruins-hindi',
-        image_url: 'https://images.unsplash.com/photo-1591528659550-6cb463c22421?q=80&w=2067',
+        image_url: '/images/blog/nalanda.jpg',
         content: `
             <h2>प्राचीन शिक्षा का केंद्र</h2>
             <p>नालंदा प्राचीन मगध में एक प्रसिद्ध महाविहार (बौद्ध मठवासी विश्वविद्यालय) था। यह 427 से 1197 ईस्वी तक संचालित रहा।</p>
@@ -215,7 +220,7 @@ exports.blogSeedData = [
         category: 'इतिहास',
         tags: ['नालंदा', 'इतिहास', 'शिक्षा'],
         published_at: new Date('2026-01-10T10:00:00Z'),
-        is_published: true
-    }
+        is_published: true,
+    },
 ];
 //# sourceMappingURL=blog.seed.js.map

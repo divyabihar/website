@@ -20,7 +20,7 @@ exports.BlogModule = BlogModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forFeature([blog_post_entity_1.BlogPost])],
         controllers: [blog_controller_1.BlogController],
         providers: [blog_service_1.BlogService],
-        exports: [blog_service_1.BlogService]
+        exports: [blog_service_1.BlogService],
     })
 ], BlogModule);
 //# sourceMappingURL=blog.module.js.map

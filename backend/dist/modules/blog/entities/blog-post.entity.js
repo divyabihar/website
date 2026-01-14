@@ -45,7 +45,7 @@ __decorate([
     (0, typeorm_1.Column)({
         type: 'enum',
         enum: BlogLanguage,
-        default: BlogLanguage.EN
+        default: BlogLanguage.EN,
     }),
     __metadata("design:type", String)
 ], BlogPost.prototype, "language", void 0);

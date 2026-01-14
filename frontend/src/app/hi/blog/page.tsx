@@ -8,6 +8,12 @@ import Image from "next/image";
 export const metadata = {
     title: "आध्यात्मिक यात्रा ब्लॉग | दिव्य बिहार",
     description: "बोधगया, राजगीर और नालंदा जैसे बिहार के आध्यात्मिक स्थलों के बारे में गाइड, सुझाव और कहानियां पढ़ें।",
+    alternates: {
+        canonical: "https://divyabihar.com/hi/blog",
+        languages: {
+            "en": "https://divyabihar.com/blog",
+        },
+    },
 };
 
 export default async function BlogIndexHindi() {

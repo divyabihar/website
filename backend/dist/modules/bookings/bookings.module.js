@@ -19,7 +19,7 @@ exports.BookingsModule = BookingsModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([lead_entity_1.Lead])],
         controllers: [bookings_controller_1.BookingsController],
-        providers: [bookings_service_1.BookingsService]
+        providers: [bookings_service_1.BookingsService],
     })
 ], BookingsModule);
 //# sourceMappingURL=bookings.module.js.map

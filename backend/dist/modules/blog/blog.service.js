@@ -28,13 +28,16 @@ let BlogService = class BlogService {
         await this.seed();
     }
     async seed() {
-        const count = await this.blogRepository.count();
-        if (count === 0) {
-            for (const post of blog_seed_1.blogSeedData) {
-                const exists = await this.blogRepository.findOneBy({ slug: post.slug });
-                if (!exists) {
-                    await this.blogRepository.save(post);
-                }
+        for (const post of blog_seed_1.blogSeedData) {
+            const exists = await this.blogRepository.findOneBy({ slug: post.slug });
+            if (!exists) {
+                await this.blogRepository.save(post);
+            }
+            else {
+                await this.blogRepository.update(exists.id, {
+                    image_url: post.image_url,
+                    meta_description: post.meta_description,
+                });
             }
         }
     }
@@ -42,7 +45,7 @@ let BlogService = class BlogService {
         const [posts, total] = await this.blogRepository.findAndCount({
             where: {
                 language,
-                is_published: true
+                is_published: true,
             },
             order: { published_at: 'DESC' },
             take: limit,
@@ -52,23 +55,23 @@ let BlogService = class BlogService {
             original: posts,
             total,
             page,
-            last_page: Math.ceil(total / limit)
+            last_page: Math.ceil(total / limit),
         };
     }
     async findBySlug(slug, language = blog_post_entity_1.BlogLanguage.EN) {
         const post = await this.blogRepository.findOne({
-            where: { slug, language }
+            where: { slug, language },
         });
         if (!post) {
             throw new common_1.NotFoundException(`Blog post not found`);
         }
         const translations = await this.blogRepository.find({
             where: { group_id: post.group_id },
-            select: ['language', 'slug']
+            select: ['language', 'slug'],
         });
         return {
             ...post,
-            translations
+            translations,
         };
     }
     async create(data) {
@@ -76,7 +79,10 @@ let BlogService = class BlogService {
             data.group_id = (0, uuid_1.v4)();
         }
         if (!data.slug && data.title) {
-            data.slug = data.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+            data.slug = data.title
+                .toLowerCase()
+                .replace(/ /g, '-')
+                .replace(/[^\w-]+/g, '');
         }
         const post = this.blogRepository.create(data);
         return this.blogRepository.save(post);

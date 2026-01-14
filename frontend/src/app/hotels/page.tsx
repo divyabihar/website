@@ -18,7 +18,7 @@ const MOCK_HOTELS = [
         rating: 4.5,
         price: "₹3,500 - ₹5,000",
         address: "Near Mahabodhi Temple, Bodh Gaya",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070",
+        image: "/images/hotels/hotel-1.jpg",
         is_featured: true
     },
     {
@@ -28,7 +28,7 @@ const MOCK_HOTELS = [
         rating: 4.8,
         price: "₹6,000 - ₹8,500",
         address: "Bodh Gaya, Bihar",
-        image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025",
+        image: "/images/hotels/hotel-2.jpg",
         is_featured: true
     },
     {
@@ -38,7 +38,7 @@ const MOCK_HOTELS = [
         rating: 4.2,
         price: "₹4,000 - ₹6,000",
         address: "Rajgir, Nalanda",
-        image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2049",
+        image: "/images/hotels/hotel-3.jpg",
         is_featured: false
     },
     {
@@ -48,7 +48,7 @@ const MOCK_HOTELS = [
         rating: 4.0,
         price: "₹2,500 - ₹4,000",
         address: "Rajgir, Bihar",
-        image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070",
+        image: "/images/hotels/hotel-4.jpg",
         is_featured: false
     }
 ];

@@ -7,6 +7,9 @@ import Image from "next/image";
 export const metadata = {
     title: "Destinations in Bihar | Bodh Gaya, Rajgir, Nalanda",
     description: "Explore the most sacred pilgrimage sites in Bihar. Visit Bodh Gaya, Rajgir, Nalanda, and more with Divya Bihar.",
+    alternates: {
+        canonical: "https://divyabihar.com/destinations",
+    },
 };
 
 export default async function DestinationsIndex() {

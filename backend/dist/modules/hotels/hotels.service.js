@@ -24,12 +24,17 @@ let HotelsService = class HotelsService {
     }
     async findAll(destinationId) {
         if (destinationId) {
-            return this.hotelsRepository.find({ where: { destination_id: destinationId } });
+            return this.hotelsRepository.find({
+                where: { destination_id: destinationId },
+            });
         }
         return this.hotelsRepository.find();
     }
     async findFeatured() {
-        return this.hotelsRepository.find({ where: { is_featured: true }, take: 6 });
+        return this.hotelsRepository.find({
+            where: { is_featured: true },
+            take: 6,
+        });
     }
     async create(hotelData) {
         const hotel = this.hotelsRepository.create(hotelData);

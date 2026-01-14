@@ -19,7 +19,7 @@ exports.HotelsModule = HotelsModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([hotel_entity_1.Hotel])],
         controllers: [hotels_controller_1.HotelsController],
-        providers: [hotels_service_1.HotelsService]
+        providers: [hotels_service_1.HotelsService],
     })
 ], HotelsModule);
 //# sourceMappingURL=hotels.module.js.map

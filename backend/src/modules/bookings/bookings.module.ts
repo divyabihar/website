@@ -7,6 +7,6 @@ import { Lead } from './entities/lead.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Lead])],
   controllers: [BookingsController],
-  providers: [BookingsService]
+  providers: [BookingsService],
 })
-export class BookingsModule { }
+export class BookingsModule {}

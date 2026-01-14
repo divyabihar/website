@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         return {
             title: `${destination.name} Tourism | Best Time to Visit, History & Hotels | Divya Bihar`,
             description: destination.overview.substring(0, 160) + "...",
+            alternates: {
+                canonical: `https://divyabihar.com/destinations/${slug}`,
+            },
             openGraph: {
                 title: `${destination.name} - The Spiritual Heart of Bihar`,
                 description: `Plan your trip to ${destination.name}. Discover temples, history, and best places to stay.`,
@@ -88,7 +91,7 @@ export default async function DestinationDetails({ params }: PageProps) {
                 <div className="relative h-[60vh] w-full">
                     <div
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url(${destination.images?.[0] || 'https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069'})` }}
+                        style={{ backgroundImage: `url(${destination.images?.[0] || '/images/destinations/bodh-gaya.jpg'})` }}
                     >
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
@@ -142,7 +145,7 @@ export default async function DestinationDetails({ params }: PageProps) {
                                 {/* Mock Hotel Cards for now - normally fetched via API based on destination */}
                                 <div className="bg-white rounded-lg shadow border border-gray-100 overflow-hidden group hover:shadow-md transition-shadow">
                                     <div className="h-40 bg-gray-200 relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070)' }}></div>
+                                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/images/hotels/hotel-1.jpg)' }}></div>
                                     </div>
                                     <div className="p-4">
                                         <h3 className="font-bold text-lg mb-1">Luxury Stay</h3>
@@ -152,7 +155,7 @@ export default async function DestinationDetails({ params }: PageProps) {
                                 </div>
                                 <div className="bg-white rounded-lg shadow border border-gray-100 overflow-hidden group hover:shadow-md transition-shadow">
                                     <div className="h-40 bg-gray-200 relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070)' }}></div>
+                                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/images/hotels/hotel-4.jpg)' }}></div>
                                     </div>
                                     <div className="p-4">
                                         <h3 className="font-bold text-lg mb-1">Comfort Inn</h3>

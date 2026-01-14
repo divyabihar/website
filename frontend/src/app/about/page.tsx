@@ -31,7 +31,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
                             <Image
-                                src="https://images.unsplash.com/photo-1622699895697-39cb3232860a?q=80&w=1964"
+                                src="/images/about-mission.jpg"
                                 alt="Spiritual Monk in Bihar"
                                 fill
                                 className="object-cover"
