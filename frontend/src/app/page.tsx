@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, ShieldCheck, HeartHandshake } from "lucide-react";
 import { getDestinations, Destination } from "@/services/api";
 import LeadForm from "@/components/features/LeadForm";
+import Image from "next/image";
 
 export default async function Home() {
   let featuredDestinations: Destination[] = [];
@@ -112,9 +113,6 @@ export default async function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Static Preview of Hotels (Dynamic in real app) */}
-              import Image from "next/image";
-
-              // ... inside the component ...
 
               <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 bg-gray-200 relative">
