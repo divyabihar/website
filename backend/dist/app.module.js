@@ -15,6 +15,7 @@ const app_service_1 = require("./app.service");
 const destinations_module_1 = require("./modules/destinations/destinations.module");
 const hotels_module_1 = require("./modules/hotels/hotels.module");
 const bookings_module_1 = require("./modules/bookings/bookings.module");
+const blog_module_1 = require("./modules/blog/blog.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -41,6 +42,7 @@ exports.AppModule = AppModule = __decorate([
             destinations_module_1.DestinationsModule,
             hotels_module_1.HotelsModule,
             bookings_module_1.BookingsModule,
+            blog_module_1.BlogModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

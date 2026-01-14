@@ -114,3 +114,45 @@ export const getLeads = async (): Promise<Lead[]> => {
         */
     }
 };
+// ... existing exports ...
+
+export interface BlogPost {
+    id: number;
+    language: 'en' | 'hi';
+    group_id: string;
+    title: string;
+    slug: string;
+    content: string;
+    image_url?: string;
+    author?: string;
+    meta_title?: string;
+    meta_description?: string;
+    keywords?: string[];
+    category?: string;
+    tags?: string[];
+    published_at?: string;
+    faq_schema?: any;
+    translations?: { language: string, slug: string }[];
+}
+
+export const getBlogPosts = async (lang: 'en' | 'hi' = 'en', page: number = 1): Promise<{ original: BlogPost[], total: number, last_page: number }> => {
+    try {
+        const res = await fetch(`${API_URL}/blog?lang=${lang}&page=${page}`, { next: { revalidate: 3600 } });
+        if (!res.ok) throw new Error('Failed to fetch blog posts');
+        return res.json();
+    } catch (error) {
+        console.error("API Error: Using empty list for blog posts.", error);
+        return { original: [], total: 0, last_page: 0 };
+    }
+};
+
+export const getBlogPost = async (slug: string, lang: 'en' | 'hi' = 'en'): Promise<BlogPost> => {
+    try {
+        const res = await fetch(`${API_URL}/blog/${slug}?lang=${lang}`, { next: { revalidate: 3600 } });
+        if (!res.ok) throw new Error('Failed to fetch blog post');
+        return res.json();
+    } catch (error) {
+        console.error(`API Error: Blog post ${slug} not found.`, error);
+        throw error;
+    }
+};

@@ -19,16 +19,14 @@ export class DestinationsService implements OnModuleInit {
     async seed() {
         const count = await this.destinationsRepository.count();
         if (count === 0) {
-            console.log('Seeding destinations...');
+            // Seeding logic
             const data = Array.isArray(seedData) ? seedData : (seedData.default || []);
-            console.log(`Found ${data.length} destinations to seed.`);
             for (const item of data) {
                 const exists = await this.destinationsRepository.findOneBy({ slug: item.slug });
                 if (!exists) {
                     await this.destinationsRepository.save(item);
                 }
             }
-            console.log('Seeding complete.');
         }
     }
 

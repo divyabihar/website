@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { DestinationsModule } from './modules/destinations/destinations.module';
 import { HotelsModule } from './modules/hotels/hotels.module';
 import { BookingsModule } from './modules/bookings/bookings.module';
+import { BlogModule } from './modules/blog/blog.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { BookingsModule } from './modules/bookings/bookings.module';
     DestinationsModule,
     HotelsModule,
     BookingsModule,
+    BlogModule,
   ],
   controllers: [AppController],
   providers: [AppService],
