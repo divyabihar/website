@@ -9,8 +9,8 @@ const HeroSection = () => {
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                    // Using a high quality placeholder from Unsplash for Bodh Gaya/Spiritual theme
-                    backgroundImage: "url('https://images.unsplash.com/photo-1563804807490-264663e2671e?q=80&w=2070&auto=format&fit=crop')"
+                    // Mahabodhi Temple or Spiritual India Vibe - Optimized
+                    backgroundImage: "url('https://images.unsplash.com/photo-1544258296-1c070f4438fa?q=80&w=2069&auto=format&fit=crop')"
                 }}
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-background" />

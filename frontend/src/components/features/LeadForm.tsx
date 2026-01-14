@@ -92,12 +92,12 @@ const LeadForm = ({ destinationName, onSuccess }: LeadFormProps) => {
                     </div>
                 )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
                         <input
                             type="date"
-                            className="w-full px-2 py-2 border border-gray-300 rounded-md outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                             value={formData.travel_date}
                             onChange={(e) => setFormData({ ...formData, travel_date: e.target.value })}
                         />
@@ -105,7 +105,7 @@ const LeadForm = ({ destinationName, onSuccess }: LeadFormProps) => {
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Service</label>
                         <select
-                            className="w-full px-2 py-2 border border-gray-300 rounded-md outline-none"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none bg-white"
                             value={formData.service_type}
                             onChange={(e) => setFormData({ ...formData, service_type: e.target.value })}
                         >
