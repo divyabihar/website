@@ -5,17 +5,18 @@ import { Search } from "lucide-react";
 
 const HeroSection = () => {
     return (
-        <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-saffron-dark">
-            {/* Background Illustration */}
+        <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-amber-500 to-orange-400">
+            {/* Background Pattern Layer (Optional subtle noise/texture) */}
+            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+
+            {/* Subtle Gradient Glow */}
+            <div className="absolute top-0 center w-full h-full bg-gradient-to-b from-black/0 via-transparent to-black/20 pointer-events-none" />
+
+            {/* Central Illustration (Faded behind text) */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-                style={{
-                    backgroundImage: "url('/hero-bg.png')"
-                }}
-            >
-                {/* Gradient Overlay for Text Visibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-saffron-dark/80" />
-            </div>
+                className="absolute w-full h-full max-w-4xl mx-auto opacity-20 md:opacity-30 bg-contain bg-center bg-no-repeat z-0 transform translate-y-12 animate-in fade-in zoom-in duration-2000"
+                style={{ backgroundImage: "url('/hero-illustration.png')" }}
+            />
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 text-center">
