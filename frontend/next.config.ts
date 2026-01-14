@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'divyabihar.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
       }
     ],
   },
