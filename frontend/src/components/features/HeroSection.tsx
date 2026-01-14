@@ -18,49 +18,96 @@ const HeroSection = () => {
                 style={{ backgroundImage: "url('/hero-illustration.png')" }}
             />
 
-            {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 text-center">
-                <div className="animate-in slide-in-from-bottom-10 fade-in duration-1000">
-                    <span className="inline-block py-1 px-3 rounded-full bg-saffron/20 text-saffron-light border border-saffron/30 text-sm font-medium mb-6 backdrop-blur-md">
-                        Welcome to the Land of Enlightenment
-                    </span>
-                    <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
-                        The Spiritual Heart of <br className="md:hidden" /><span className="text-saffron-light/90">India</span>
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                        Explore the timeless heritage of Bodh Gaya, Rajgir, Nalanda, and beyond. Plan your pilgrimage with Bihar's most trusted travel partner.
-                    </p>
+            {/* Content Container */}
+            <div className="relative z-10 container mx-auto px-4 h-full flex items-center pt-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 w-full items-center">
 
-                    {/* Search Box */}
-                    <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 flex flex-col md:flex-row gap-2">
-                        <div className="flex-1 relative">
-                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={20} />
-                            <input
-                                type="text"
-                                placeholder="Where do you want to find peace today?"
-                                className="w-full h-12 pl-12 pr-4 bg-transparent text-white placeholder:text-gray-300 border-none outline-none rounded-full focus:ring-2 focus:ring-saffron/50"
-                            />
+                    {/* Left Column: Text & Trust */}
+                    <div className="text-center lg:text-left animate-in slide-in-from-bottom-10 fade-in duration-1000 order-2 lg:order-1">
+                        {/* Trust Badge */}
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-6 animate-pulse">
+                            <span className="flex text-yellow-400">
+                                {"★★★★★"}
+                            </span>
+                            <span className="text-sm font-medium">Trusted by 10k+ Pilgrims</span>
                         </div>
-                        <Button size="lg" className="rounded-full px-8 text-base shadow-lg hover:shadow-saffron/50 transition-shadow">
-                            Plan My Trip
-                        </Button>
+
+                        {/* Main Headline */}
+                        <h1 className="text-4xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
+                            Discover the <br />
+                            <span className="text-amber-100 italic font-serif">Spiritual Heart</span> of India
+                        </h1>
+
+                        {/* Subheadline */}
+                        <p className="text-lg lg:text-xl text-white/90 max-w-xl mx-auto lg:mx-0 mb-8 font-light leading-relaxed">
+                            Plan your journey to <span className="font-semibold text-white">Bodh Gaya, Nalanda, Rajgir</span>, and beyond. Experience peace with Bihar's most trusted travel partner.
+                        </p>
+
+                        {/* CTA Buttons - Hidden on Mobile to prioritize Form access or adjusted */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <Button size="lg" className="bg-white text-saffron-dark hover:bg-gray-100 font-bold px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105">
+                                Explore Destinations
+                            </Button>
+                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-6 rounded-full font-medium">
+                                Watch Video
+                            </Button>
+                        </div>
+
+                        {/* Quick Trust Stats */}
+                        <div className="mt-12 flex gap-8 justify-center lg:justify-start text-white/80 border-t border-white/10 pt-6">
+                            <div>
+                                <p className="text-2xl font-bold text-white">50+</p>
+                                <p className="text-xs uppercase tracking-wider">Sacred Sites</p>
+                            </div>
+                            <div>
+                                <p className="text-2xl font-bold text-white">24/7</p>
+                                <p className="text-xs uppercase tracking-wider">Support</p>
+                            </div>
+                            <div>
+                                <p className="text-2xl font-bold text-white">₹0</p>
+                                <p className="text-xs uppercase tracking-wider">Booking Fees</p>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Quick Stats/Trust Items */}
-                    <div className="mt-16 flex flex-wrap justify-center gap-8 text-white/80">
-                        <div className="flex flex-col items-center">
-                            <span className="text-3xl font-bold text-gold">50+</span>
-                            <span className="text-xs uppercase tracking-wider">Spiritual Sites</span>
-                        </div>
-                        <div className="w-px h-10 bg-white/20 hidden md:block"></div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-3xl font-bold text-gold">10k+</span>
-                            <span className="text-xs uppercase tracking-wider">Happy Pilgrims</span>
-                        </div>
-                        <div className="w-px h-10 bg-white/20 hidden md:block"></div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-3xl font-bold text-gold">24/7</span>
-                            <span className="text-xs uppercase tracking-wider">Travel Support</span>
+                    {/* Right Column: Mini Lead Form (Glassmorphism) */}
+                    <div className="order-1 lg:order-2 w-full max-w-md mx-auto lg:ml-auto animate-in slide-in-from-right-10 fade-in duration-1000 delay-200">
+                        <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-gold"></div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Get Your Free Quote</h3>
+                            <p className="text-white/80 text-sm mb-6">Expert travel planning for your spiritual journey.</p>
+
+                            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Your Name"
+                                        className="w-full h-12 px-4 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-amber-400 text-gray-900 placeholder:text-gray-500"
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="tel"
+                                        placeholder="Phone Number (+91)"
+                                        className="w-full h-12 px-4 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-amber-400 text-gray-900 placeholder:text-gray-500"
+                                    />
+                                </div>
+                                <div>
+                                    <select className="w-full h-12 px-4 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-amber-400 text-gray-900">
+                                        <option value="">Select Destination</option>
+                                        <option value="bodhgaya">Bodh Gaya</option>
+                                        <option value="rajgir">Rajgir</option>
+                                        <option value="nalanda">Nalanda</option>
+                                        <option value="varanasi">Varanasi</option>
+                                    </select>
+                                </div>
+                                <Button className="w-full bg-saffron hover:bg-saffron-dark text-white font-bold h-12 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                                    Request Call Back
+                                </Button>
+                                <p className="text-xs text-white/60 text-center">
+                                    <span className="opacity-75">🔒 Your details are safe with us.</span>
+                                </p>
+                            </form>
                         </div>
                     </div>
                 </div>
