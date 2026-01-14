@@ -37,7 +37,7 @@ const HeroSection = () => {
                         backgroundImage: `url('${HERO_IMAGES[index]}')`
                     }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-orange-900/30 to-background/90" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background/90" />
                 </motion.div>
             </AnimatePresence>
 
