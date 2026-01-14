@@ -63,21 +63,6 @@ const HeroSection = () => {
                 </motion.div>
             </div>
 
-            {/* 3. Bottom Illustration (Rising from footer) */}
-            <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5, delay: 0.2 }}
-                className="absolute bottom-0 left-0 w-full h-[50vh] z-0 pointer-events-none"
-            >
-                {/* Using the generated illustration as a silhouette/bottom layer */}
-                <div
-                    className="w-full h-full bg-bottom bg-contain bg-no-repeat opacity-40 mix-blend-screen"
-                    style={{ backgroundImage: "url('/hero-illustration.png')" }}
-                />
-                {/* Fade into bottom color to blend seamlessly */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2c0b0b] via-transparent to-transparent" />
-            </motion.div>
         </div>
     );
 };
