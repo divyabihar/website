@@ -1,117 +1,83 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
     return (
-        <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-amber-500 to-orange-400">
-            {/* Background Pattern Layer (Optional subtle noise/texture) */}
-            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+        <div className="relative h-[90vh] w-full bg-[#2c0b0b] overflow-hidden flex flex-col items-center justify-center">
 
-            {/* Subtle Gradient Glow */}
-            <div className="absolute top-0 center w-full h-full bg-gradient-to-b from-black/0 via-transparent to-black/20 pointer-events-none" />
+            {/* 1. Background Effects */}
+            {/* Golden Central Glow (The Halo) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/20 rounded-full blur-[100px] animate-pulse" />
 
-            {/* Central Illustration (Faded behind text) */}
-            <div
-                className="absolute w-full h-full max-w-4xl mx-auto opacity-20 md:opacity-30 bg-contain bg-center bg-no-repeat z-0 transform translate-y-12 animate-in fade-in zoom-in duration-2000"
-                style={{ backgroundImage: "url('/hero-illustration.png')" }}
-            />
+            {/* Spiraling Mandala Effect (CSS Radial Pattern) */}
+            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] mix-blend-color-dodge"></div>
 
-            {/* Content Container */}
-            <div className="relative z-10 container mx-auto px-4 h-full flex items-center pt-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 w-full items-center">
+            {/* 2. Main Content Z-Index 10 */}
+            <div className="relative z-10 container mx-auto px-4 text-center h-full flex flex-col items-center justify-center pt-12">
 
-                    {/* Left Column: Text & Trust */}
-                    <div className="text-center lg:text-left animate-in slide-in-from-bottom-10 fade-in duration-1000 order-2 lg:order-1">
-                        {/* Trust Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-6 animate-pulse">
-                            <span className="flex text-yellow-400">
-                                {"★★★★★"}
-                            </span>
-                            <span className="text-sm font-medium">Trusted by 10k+ Pilgrims</span>
-                        </div>
+                {/* Sanskrit/Spiritual Mantra (Optional Subtle Top) */}
+                <motion.p
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-amber-500/80 tracking-[0.3em] text-sm md:text-base font-medium mb-6 uppercase"
+                >
+                    || Atma Deepo Bhava ||
+                </motion.p>
 
-                        {/* Main Headline */}
-                        <h1 className="text-4xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
-                            Discover the <br />
-                            <span className="text-amber-100 italic font-serif">Spiritual Heart</span> of India
-                        </h1>
+                {/* Main Headline */}
+                <motion.h1
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-amber-100 to-white mb-6 drop-shadow-2xl leading-tight font-serif"
+                >
+                    Divya Bihar
+                </motion.h1>
 
-                        {/* Subheadline */}
-                        <p className="text-lg lg:text-xl text-white/90 max-w-xl mx-auto lg:mx-0 mb-8 font-light leading-relaxed">
-                            Plan your journey to <span className="font-semibold text-white">Bodh Gaya, Nalanda, Rajgir</span>, and beyond. Experience peace with Bihar's most trusted travel partner.
-                        </p>
+                {/* Subheadline - Clean & Precise */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                    className="text-lg md:text-2xl text-amber-100/80 max-w-2xl mx-auto mb-10 font-light"
+                >
+                    Journey to the <span className="text-amber-400 font-normal">Land of Enlightenment</span>. <br className="hidden md:block" />
+                    Discover peace in Bodh Gaya, Rajgir & Nalanda.
+                </motion.p>
 
-                        {/* CTA Buttons - Hidden on Mobile to prioritize Form access or adjusted */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <Button size="lg" className="bg-white text-saffron-dark hover:bg-gray-100 font-bold px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105">
-                                Explore Destinations
-                            </Button>
-                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-6 rounded-full font-medium">
-                                Watch Video
-                            </Button>
-                        </div>
-
-                        {/* Quick Trust Stats */}
-                        <div className="mt-12 flex gap-8 justify-center lg:justify-start text-white/80 border-t border-white/10 pt-6">
-                            <div>
-                                <p className="text-2xl font-bold text-white">50+</p>
-                                <p className="text-xs uppercase tracking-wider">Sacred Sites</p>
-                            </div>
-                            <div>
-                                <p className="text-2xl font-bold text-white">24/7</p>
-                                <p className="text-xs uppercase tracking-wider">Support</p>
-                            </div>
-                            <div>
-                                <p className="text-2xl font-bold text-white">₹0</p>
-                                <p className="text-xs uppercase tracking-wider">Booking Fees</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column: Mini Lead Form (Glassmorphism) */}
-                    <div className="order-1 lg:order-2 w-full max-w-md mx-auto lg:ml-auto animate-in slide-in-from-right-10 fade-in duration-1000 delay-200">
-                        <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-gold"></div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Get Your Free Quote</h3>
-                            <p className="text-white/80 text-sm mb-6">Expert travel planning for your spiritual journey.</p>
-
-                            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Your Name"
-                                        className="w-full h-12 px-4 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-amber-400 text-gray-900 placeholder:text-gray-500"
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="tel"
-                                        placeholder="Phone Number (+91)"
-                                        className="w-full h-12 px-4 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-amber-400 text-gray-900 placeholder:text-gray-500"
-                                    />
-                                </div>
-                                <div>
-                                    <select className="w-full h-12 px-4 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-amber-400 text-gray-900">
-                                        <option value="">Select Destination</option>
-                                        <option value="bodhgaya">Bodh Gaya</option>
-                                        <option value="rajgir">Rajgir</option>
-                                        <option value="nalanda">Nalanda</option>
-                                        <option value="varanasi">Varanasi</option>
-                                    </select>
-                                </div>
-                                <Button className="w-full bg-saffron hover:bg-saffron-dark text-white font-bold h-12 rounded-lg shadow-lg hover:shadow-xl transition-all">
-                                    Request Call Back
-                                </Button>
-                                <p className="text-xs text-white/60 text-center">
-                                    <span className="opacity-75">🔒 Your details are safe with us.</span>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                {/* Single Premium CTA */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 }}
+                >
+                    <Button
+                        size="lg"
+                        className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white border-0 text-lg px-10 py-6 rounded-full shadow-[0_0_30px_-5px_rgba(245,158,11,0.5)] transition-all hover:scale-105 hover:shadow-[0_0_50px_-5px_rgba(245,158,11,0.7)]"
+                    >
+                        Begin Your Pilgrimage
+                    </Button>
+                </motion.div>
             </div>
+
+            {/* 3. Bottom Illustration (Rising from footer) */}
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, delay: 0.2 }}
+                className="absolute bottom-0 left-0 w-full h-[50vh] z-0 pointer-events-none"
+            >
+                {/* Using the generated illustration as a silhouette/bottom layer */}
+                <div
+                    className="w-full h-full bg-bottom bg-contain bg-no-repeat opacity-40 mix-blend-screen"
+                    style={{ backgroundImage: "url('/hero-illustration.png')" }}
+                />
+                {/* Fade into bottom color to blend seamlessly */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2c0b0b] via-transparent to-transparent" />
+            </motion.div>
         </div>
     );
 };
