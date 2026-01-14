@@ -33,9 +33,7 @@ const Navbar = () => {
         <nav
             className={cn(
                 "fixed w-full z-50 transition-all duration-300",
-                isScrolled
-                    ? "bg-white/80 backdrop-blur-md shadow-md py-2 border-b border-gold/20"
-                    : "bg-transparent py-4"
+                "fixed w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-md shadow-sm border-b border-gold/20"
             )}
         >
             <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
@@ -44,10 +42,7 @@ const Navbar = () => {
                     <div className="w-10 h-10 bg-gradient-to-br from-saffron to-gold rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg transform group-hover:scale-110 transition-transform">
                         DB
                     </div>
-                    <span className={cn(
-                        "text-xl md:text-2xl font-bold tracking-tight transition-colors",
-                        isScrolled ? "text-foreground" : "text-white"
-                    )}>
+                    <span className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 transition-colors">
                         Divya<span className="text-saffron">Bihar</span>
                     </span>
                 </Link>
@@ -59,8 +54,7 @@ const Navbar = () => {
                             key={link.name}
                             href={link.href}
                             className={cn(
-                                "text-sm font-medium hover:text-saffron transition-colors",
-                                isScrolled ? "text-foreground" : "text-white/90"
+                                "text-sm font-medium hover:text-saffron transition-colors text-gray-700"
                             )}
                         >
                             {link.name}
@@ -74,9 +68,8 @@ const Navbar = () => {
                 {/* Mobile Menu Toggle */}
                 <button
                     className="md:hidden text-foreground p-2"
-                    onClick={() => setIsOpen(!isOpen)}
                 >
-                    {isOpen ? <X className={isScrolled ? "text-foreground" : "text-white"} /> : <Menu className={isScrolled ? "text-foreground" : "text-white"} />}
+                    {isOpen ? <X className="text-gray-900" /> : <Menu className="text-gray-900" />}
                 </button>
             </div>
 
