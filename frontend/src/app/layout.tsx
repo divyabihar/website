@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Divya Bihar | The Spiritual Heart of India",
   description: "Plan your spiritual journey to Bihar. Explore Bodh Gaya, Rajgir, Nalanda, and more. Book hotels, tours, and travel services.",
+  verification: {
+    google: "xaHk3nFVMQ9u5yg73pyL80xIEcsdCDFfQfBarcNUrJ0",
+  },
 };
 
 export default function RootLayout({
