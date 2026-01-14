@@ -13,33 +13,23 @@ const HERO_IMAGES = [
 ];
 
 const HeroSection = () => {
-    const [index, setIndex] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-        }, 5000); // Change image every 5 seconds
-        return () => clearInterval(timer);
-    }, []);
-
     return (
         <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-black">
-            {/* Animated Background Slideshow */}
-            <AnimatePresence mode="popLayout">
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
-                    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: `url('${HERO_IMAGES[index]}')`
-                    }}
+            {/* Background Video */}
+            <div className="absolute inset-0 z-0">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background/90" />
-                </motion.div>
-            </AnimatePresence>
+                    <source src="https://videos.pexels.com/video-files/5533150/5533150-hd_1920_1080_25fps.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                {/* Dark overlay for text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background/90" />
+            </div>
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 text-center">
@@ -88,7 +78,7 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
