@@ -2,13 +2,33 @@
 
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import { useRef, useEffect } from 'react';
 
 const HeroSection = () => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handleTimeUpdate = () => {
+            // Loop 2 seconds before the end
+            if (video.duration && video.currentTime >= video.duration - 2) {
+                video.currentTime = 0;
+                video.play();
+            }
+        };
+
+        video.addEventListener("timeupdate", handleTimeUpdate);
+        return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+    }, []);
+
     return (
         <div className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-black">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
+                    ref={videoRef}
                     autoPlay
                     muted
                     loop
@@ -19,8 +39,9 @@ const HeroSection = () => {
                     <source src="/hero.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                {/* Dark overlay for text visibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background/90" />
+                {/* Strong dark overlay for text visibility */}
+                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
             </div>
 
             {/* Content */}
