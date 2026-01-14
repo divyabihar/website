@@ -18,10 +18,25 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const blog_post_entity_1 = require("./entities/blog-post.entity");
 const uuid_1 = require("uuid");
+const blog_seed_1 = require("./blog.seed");
 let BlogService = class BlogService {
     blogRepository;
     constructor(blogRepository) {
         this.blogRepository = blogRepository;
+    }
+    async onModuleInit() {
+        await this.seed();
+    }
+    async seed() {
+        const count = await this.blogRepository.count();
+        if (count === 0) {
+            for (const post of blog_seed_1.blogSeedData) {
+                const exists = await this.blogRepository.findOneBy({ slug: post.slug });
+                if (!exists) {
+                    await this.blogRepository.save(post);
+                }
+            }
+        }
     }
     async findAll(language = blog_post_entity_1.BlogLanguage.EN, limit = 10, page = 1) {
         const [posts, total] = await this.blogRepository.findAndCount({

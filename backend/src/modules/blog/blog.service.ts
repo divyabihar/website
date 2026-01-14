@@ -1,15 +1,34 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BlogPost, BlogLanguage } from './entities/blog-post.entity';
 import { v4 as uuidv4 } from 'uuid';
+import { blogSeedData } from './blog.seed';
 
 @Injectable()
-export class BlogService {
+export class BlogService implements OnModuleInit {
     constructor(
         @InjectRepository(BlogPost)
         private blogRepository: Repository<BlogPost>,
     ) { }
+
+    async onModuleInit() {
+        await this.seed();
+    }
+
+    async seed() {
+        const count = await this.blogRepository.count();
+        if (count === 0) {
+            // Seeding blog posts
+            for (const post of blogSeedData) {
+                // Ensure unique slugs
+                const exists = await this.blogRepository.findOneBy({ slug: post.slug });
+                if (!exists) {
+                    await this.blogRepository.save(post);
+                }
+            }
+        }
+    }
 
     async findAll(language: BlogLanguage = BlogLanguage.EN, limit: number = 10, page: number = 1) {
         const [posts, total] = await this.blogRepository.findAndCount({

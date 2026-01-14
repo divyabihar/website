@@ -1,8 +1,11 @@
+import { OnModuleInit } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { BlogPost, BlogLanguage } from './entities/blog-post.entity';
-export declare class BlogService {
+export declare class BlogService implements OnModuleInit {
     private blogRepository;
     constructor(blogRepository: Repository<BlogPost>);
+    onModuleInit(): Promise<void>;
+    seed(): Promise<void>;
     findAll(language?: BlogLanguage, limit?: number, page?: number): Promise<{
         original: BlogPost[];
         total: number;

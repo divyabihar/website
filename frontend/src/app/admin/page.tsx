@@ -27,11 +27,13 @@ export default function AdminDashboard() {
                         </div>
                     </Link>
 
-                    <div className="bg-white p-6 rounded-xl shadow opacity-75 cursor-not-allowed">
-                        <h2 className="text-xl font-bold mb-2">Manage Destinations</h2>
-                        <p className="text-gray-500 mb-4">Update destination details (Coming Soon).</p>
-                        <Button variant="outline" className="w-full" disabled>Coming Soon</Button>
-                    </div>
+                    <Link href="/admin/blog">
+                        <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer border border-transparent hover:border-saffron">
+                            <h2 className="text-xl font-bold mb-2">Manage Blog</h2>
+                            <p className="text-gray-500 mb-4">Create and edit blog posts (Bilingual).</p>
+                            <Button variant="outline" className="w-full">Manage Content</Button>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <Footer />
